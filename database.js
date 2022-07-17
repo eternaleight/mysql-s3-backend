@@ -30,6 +30,17 @@ const createPost = (description, image_url, callback) => {
 
 exports.createPost = createPost
 
-const createTable = () => {
+const getPosts = (callback) => {
+  const query = `
+  SELECT * FROM posts
+  `
+  connection.query(query, (err, results) => {
+    if(err) {
+      callback(err)
+      return
+    }
+    callback(null, results)
+  })
 }
 
+exports.getPosts = getPosts

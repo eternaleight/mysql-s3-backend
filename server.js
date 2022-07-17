@@ -2,15 +2,27 @@ const express = require("express")
 const multer = require("multer")
 const upload = multer({ dest: 'uploads/' })
 
+const fs = require('fs')
+const path = require('path')
+
 const app = express()
 
 const database = require('./database')
 
-app.get('/posts', (req, res) => {
-
-})
 app.get('/images/:filename', (req, res) => {
+  const filename = req.params.filename
+ const readstream = fs.createReadStream(path.join(__dirname, 'uploads', filename))
+  readstream.pipe(res)
+})
 
+app.get('/posts', (req, res) => {
+  database.getPosts((err, posts) => {
+    if (err) {
+      res.send({err: err.message})
+      return
+    }
+    res.send({posts})
+  })
 })
 
 app.post('/posts', upload.single("image"), (req, res) => {
