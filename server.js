@@ -9,6 +9,8 @@ const app = express()
 
 const database = require('./database')
 
+app.use(express.static('build'))
+
 app.get('/images/:filename', (req, res) => {
   const filename = req.params.filename
  const readstream = fs.createReadStream(path.join(__dirname, 'uploads', filename))
@@ -26,7 +28,6 @@ app.get('/posts', (req, res) => {
 })
 
 app.post('/posts', upload.single("image"), (req, res) => {
-  console.log(req.file)
   const { filename, path } = req.file
   const description = req.body.description
 
@@ -43,9 +44,14 @@ app.post('/posts', upload.single("image"), (req, res) => {
       image_url
     })
   })
-
   res.send("⚡️")
 })
+
+
+//if react reoter, then add this
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build/index.html'))
+// })
 
 
 const port = process.env.PORT || 8080
