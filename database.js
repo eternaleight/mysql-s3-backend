@@ -30,6 +30,21 @@ const createPost = (description, image_url, callback) => {
 
 exports.createPost = createPost
 
+// const deletePosts = (id, callback) => {
+//   const query = `
+//   DELETE FROM posts WHERE id = ${id}
+//   `
+//   connection.query(query, (err, results) => {
+//     if(err) {
+//       callback(err)
+//       return
+//     }
+//     callback(null, results)
+//   })
+// }
+
+// exports.deletePosts = deletePosts
+
 const getPosts = (callback) => {
   const query = `
   SELECT * FROM posts
