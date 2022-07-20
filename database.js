@@ -8,19 +8,20 @@ const connection = mysql.createConnection({
   password: process.env.mysql_password,
   database: process.env.mysql_database,
 })
-
+ 
 connection.connect()
 
-const createPost = (description, image_url, callback) => {
+function createPost(description, image_url, callback) {
 
   const query = `
   INSERT INTO posts (description, image_url)
   VALUES (?, ?)
   `
+
   const params = [description, image_url]
 
   connection.query(query, params, (err, result) => {
-    if(err) {
+    if (err) {
       callback(err)
       return
     }
@@ -30,27 +31,13 @@ const createPost = (description, image_url, callback) => {
 
 exports.createPost = createPost
 
-// const deletePosts = (id, callback) => {
-//   const query = `
-//   DELETE FROM posts WHERE id = ${id}
-//   `
-//   connection.query(query, (err, results) => {
-//     if(err) {
-//       callback(err)
-//       return
-//     }
-//     callback(null, results)
-//   })
-// }
-
-// exports.deletePosts = deletePosts
-
-const getPosts = (callback) => {
+function getPosts(callback) {
   const query = `
   SELECT * FROM posts
   `
+
   connection.query(query, (err, results) => {
-    if(err) {
+    if (err) {
       callback(err)
       return
     }
