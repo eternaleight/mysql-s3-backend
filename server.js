@@ -33,7 +33,8 @@ app.get('/posts', (req, res) => {
 // })
 
 app.post('/posts', upload.single("image"), (req, res) => {
-  const { filename, path } = req.file
+  const { filename } = req.file
+  console.log(req.body)
   const description = req.body.description
 
   // save these details to a database
@@ -49,7 +50,6 @@ app.post('/posts', upload.single("image"), (req, res) => {
       image_url
     })
   })
-  res.send("⚡️")
 })
 
 
