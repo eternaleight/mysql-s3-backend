@@ -3,6 +3,9 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const domain = require('express-domain-middleware');
 
+//const fs = require('fs')
+//const path = require('path')
+
 const app = express()
 
 const database = require('./database')
@@ -14,6 +17,7 @@ app.use(domain)
 
 app.get('/images/:filename', (req, res) => {
   const filename = req.params.filename
+  //const readstream = fs.createReadStream(path.join(__dirname, 'uploads', filename))
   const readStream = s3.getFileStream(filename)
   readStream.pipe(res)
 })
