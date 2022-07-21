@@ -1,5 +1,5 @@
-create database app3000;
-use app3000;
+create database mysql_s3;
+use mysql_s3;
 
 CREATE TABLE posts (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
