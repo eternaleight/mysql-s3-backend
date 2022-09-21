@@ -13,7 +13,7 @@ Mysql aws s3 connect
 
 ## Project structure
 ```
-$PROJECT_ROOT
+PROJECT_ROOT
 ├── README.md
 ├── build # Static files
 ├── uploads # Image files
