@@ -8,4 +8,4 @@ Mysql aws s3 connect
 
 - [Mysql](https://www.mysql.com/jp/) - MySQL is an open-source relational database management system
 - [Nodejs](https://nodejs.org/ja/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-- [AmazonS3](https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/Welcome.html) - Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services (AWS) that provides object storage through a web service interface.
+- [AmazonS3](https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/Welcome.html) - Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services that provides object storage through a web service interface.
