@@ -15,12 +15,12 @@ Mysql aws s3 connect
 ```
 PROJECT_ROOT
 ├── README.md
-├── build # Static files
-├── uploads # Image files
+├── build       # Static files
+├── uploads     # Image files
 ├── database.js # Mysql configure
 ├── package-lock.json
 ├── package.json
-├── s3.js # AWS s3 configure
-├── schema.sql # Mysql shema
-└── server.js # Main file
+├── s3.js       # AWS s3 configure
+├── schema.sql  # Mysql shcema
+└── server.js   # Main file
 ```
